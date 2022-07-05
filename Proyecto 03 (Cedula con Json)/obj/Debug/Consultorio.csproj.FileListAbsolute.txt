@@ -48,3 +48,17 @@ C:\Users\user\source\repos\Proyecto-03\obj\Debug\Consultorio.csproj.CoreCompileI
 C:\Users\user\source\repos\Proyecto-03\obj\Debug\Consultorio.csproj.CopyComplete
 C:\Users\user\source\repos\Proyecto-03\obj\Debug\Consultorio.exe
 C:\Users\user\source\repos\Proyecto-03\obj\Debug\Consultorio.pdb
+C:\Users\yopro\source\repos\Proyecto-03\Proyecto 03 (Cedula con Json)\obj\Debug\Consultorio.csproj.AssemblyReference.cache
+C:\Users\yopro\source\repos\Proyecto-03\Proyecto 03 (Cedula con Json)\obj\Debug\Consultorio.csproj.SuggestedBindingRedirects.cache
+C:\Users\yopro\source\repos\Proyecto-03\Proyecto 03 (Cedula con Json)\obj\Debug\Consultorio.Form1.resources
+C:\Users\yopro\source\repos\Proyecto-03\Proyecto 03 (Cedula con Json)\obj\Debug\Consultorio.Properties.Resources.resources
+C:\Users\yopro\source\repos\Proyecto-03\Proyecto 03 (Cedula con Json)\obj\Debug\Consultorio.csproj.GenerateResource.cache
+C:\Users\yopro\source\repos\Proyecto-03\Proyecto 03 (Cedula con Json)\obj\Debug\Consultorio.csproj.CoreCompileInputs.cache
+C:\Users\yopro\source\repos\Proyecto-03\Proyecto 03 (Cedula con Json)\obj\Debug\Consultorio.exe
+C:\Users\yopro\source\repos\Proyecto-03\Proyecto 03 (Cedula con Json)\obj\Debug\Consultorio.pdb
+C:\Users\yopro\source\repos\Proyecto-03\Proyecto 03 (Cedula con Json)\bin\Debug\Consultorio.exe.config
+C:\Users\yopro\source\repos\Proyecto-03\Proyecto 03 (Cedula con Json)\bin\Debug\Consultorio.exe
+C:\Users\yopro\source\repos\Proyecto-03\Proyecto 03 (Cedula con Json)\bin\Debug\Consultorio.pdb
+C:\Users\yopro\source\repos\Proyecto-03\Proyecto 03 (Cedula con Json)\bin\Debug\Newtonsoft.Json.dll
+C:\Users\yopro\source\repos\Proyecto-03\Proyecto 03 (Cedula con Json)\bin\Debug\Newtonsoft.Json.xml
+C:\Users\yopro\source\repos\Proyecto-03\Proyecto 03 (Cedula con Json)\obj\Debug\Consultorio.csproj.CopyComplete

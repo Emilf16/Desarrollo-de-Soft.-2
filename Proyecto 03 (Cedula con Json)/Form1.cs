@@ -95,7 +95,7 @@ namespace Consultorio
                     EstadoCivil = cb_EstadoCivil.Text,
                     Sangre = cb_TipoSangre.Text,
                     Nacionalidad = tbx_Nacionalidad.Text,
-                    Sexo = rbtn_Femenino.Checked ? "F" : "M",
+                    Sexo = cb_Sexo.Text,
                     Nacimiento = dtp_FechaNacimiento.Value,
                     Expiracion = dtp_FechaExp.Value,
                     Telefono = tbx_Telefono.Text,
@@ -118,7 +118,7 @@ namespace Consultorio
                     civilian.EstadoCivil = cb_EstadoCivil.Text;
                     civilian.Sangre = cb_TipoSangre.Text;
                     civilian.Nacionalidad = tbx_Nacionalidad.Text;
-                    civilian.Sexo = rbtn_Femenino.Checked ? "F" : "M";
+                    civilian.Sexo = cb_Sexo.Text;
                     civilian.Nacimiento = dtp_FechaNacimiento.Value;
                     civilian.Expiracion = dtp_FechaExp.Value;
                     civilian.Telefono = tbx_Telefono.Text;
@@ -200,6 +200,34 @@ namespace Consultorio
         {
             int edad = DateTime.Now.Year- dtp_FechaNacimiento.Value.Year;
             this.BackColor = edad == 18 ? Color.DarkSeaGreen : Color.Blue; 
+        }
+
+        private void dgv_Civiles_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tbx_ID.Text = (string)dgv_Civiles.CurrentRow.Cells["ID"].Value.ToString();
+            tbx_Nombre.Text = (string)dgv_Civiles.CurrentRow.Cells["Nombre"].Value;
+            tbx_Apellido.Text = (string)dgv_Civiles.CurrentRow.Cells["Apellido"].Value;
+            tbx_Cedula.Text = (string)dgv_Civiles.CurrentRow.Cells["Cedula"].Value;
+            cb_TipoSangre.Text = (string)dgv_Civiles.CurrentRow.Cells["Sangre"].Value;
+            tbx_LugarNacimiento.Text = (string)dgv_Civiles.CurrentRow.Cells["LugarNacimiento"].Value;
+            cb_EstadoCivil.Text = (string)dgv_Civiles.CurrentRow.Cells["EstadoCivil"].Value;
+            tbx_Nacionalidad.Text = (string)dgv_Civiles.CurrentRow.Cells["Nacionalidad"].Value;
+            dtp_FechaNacimiento.Value = (DateTime)dgv_Civiles.CurrentRow.Cells["Nacimiento"].Value;
+            dtp_FechaExp.Value = (DateTime)dgv_Civiles.CurrentRow.Cells["Expiracion"].Value;
+            tbx_Telefono.Text = (string)dgv_Civiles.CurrentRow.Cells["Telefono"].Value;
+            cb_Sexo.Text = (string)dgv_Civiles.CurrentRow.Cells["Sexo"].Value;
+
+
+        }
+
+        private void rbtn_Masculino_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
     
