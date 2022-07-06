@@ -17,7 +17,9 @@ namespace Consultorio
         public bool Agregar { get; set; } = true;
         public Form1()
         {
+
             InitializeComponent();
+            GetRecords();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -47,7 +49,13 @@ namespace Consultorio
 
         private void btn_Cancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            EmptyControls();
+            btn_Crear.Enabled = true;
+            btn_Guardar.Enabled = false;
+            btn_Cancelar.Enabled = true;
+            btn_Actualizar.Enabled = false;
+            btn_Borrar.Enabled = false;
+            gb_Cedula.Enabled = false;
         }
 
         private void btn_Crear_Click(object sender, EventArgs e)
@@ -55,6 +63,8 @@ namespace Consultorio
             btn_Crear.Enabled = false;
             btn_Guardar.Enabled = true;
             btn_Cancelar.Enabled = true;
+            btn_Actualizar.Enabled = false;
+            btn_Borrar.Enabled = false;
             gb_Cedula.Enabled = true;
 
             GenerateNewID();
@@ -137,10 +147,15 @@ namespace Consultorio
             MessageBox.Show("Registro Almacenado", "INTEC", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
-            gb_Cedula.Enabled = false;
+            gb_Cedula.Enabled = true;
             btn_Crear.Enabled = true;
             btn_Guardar.Enabled = false;
-            btn_Cancelar.Enabled = false;
+            btn_Cancelar.Enabled = true;
+            btn_Actualizar.Enabled = false;
+            btn_Borrar.Enabled = false;
+
+            
+            
 
             EmptyControls();
             GetRecords();
@@ -204,18 +219,24 @@ namespace Consultorio
 
         private void dgv_Civiles_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            tbx_ID.Text = (string)dgv_Civiles.CurrentRow.Cells["ID"].Value.ToString();
-            tbx_Nombre.Text = (string)dgv_Civiles.CurrentRow.Cells["Nombre"].Value;
-            tbx_Apellido.Text = (string)dgv_Civiles.CurrentRow.Cells["Apellido"].Value;
-            tbx_Cedula.Text = (string)dgv_Civiles.CurrentRow.Cells["Cedula"].Value;
-            cb_TipoSangre.Text = (string)dgv_Civiles.CurrentRow.Cells["Sangre"].Value;
-            tbx_LugarNacimiento.Text = (string)dgv_Civiles.CurrentRow.Cells["LugarNacimiento"].Value;
-            cb_EstadoCivil.Text = (string)dgv_Civiles.CurrentRow.Cells["EstadoCivil"].Value;
-            tbx_Nacionalidad.Text = (string)dgv_Civiles.CurrentRow.Cells["Nacionalidad"].Value;
-            dtp_FechaNacimiento.Value = (DateTime)dgv_Civiles.CurrentRow.Cells["Nacimiento"].Value;
-            dtp_FechaExp.Value = (DateTime)dgv_Civiles.CurrentRow.Cells["Expiracion"].Value;
-            tbx_Telefono.Text = (string)dgv_Civiles.CurrentRow.Cells["Telefono"].Value;
-            cb_Sexo.Text = (string)dgv_Civiles.CurrentRow.Cells["Sexo"].Value;
+            gb_Cedula.Enabled = true;
+            if (e.RowIndex > -1)
+            {
+                var listado = (List<Civilian>)dgv_Civiles.DataSource;
+                var objeto = (Civilian)listado[e.RowIndex];
+                tbx_ID.Text = objeto.ID.ToString();
+                tbx_Nombre.Text = objeto.Nombre.ToString();
+                tbx_Apellido.Text = objeto.Apellido.ToString();
+                tbx_Cedula.Text = objeto.Cedula.ToString();
+                cb_TipoSangre.Text = objeto.Sangre.ToString();
+                tbx_LugarNacimiento.Text = objeto.LugarNacimiento.ToString();
+                cb_EstadoCivil.Text = objeto.EstadoCivil.ToString();
+                tbx_Nacionalidad.Text = objeto.Nacionalidad.ToString();
+                dtp_FechaNacimiento.Text = objeto.Nacimiento.ToString();
+                dtp_FechaExp.Text = objeto.Expiracion.ToString();
+                tbx_Telefono.Text = objeto.Telefono.ToString();
+                cb_Sexo.Text = objeto.Sexo.ToString();
+            }
 
 
         }
@@ -229,6 +250,92 @@ namespace Consultorio
         {
 
         }
+
+        private void btn_Actualizar_Click(object sender, EventArgs e)
+        {
+            UpdateRecords();
+            EmptyControls();
+        }
+
+        private void UpdateRecords()
+        {
+            var pathFile = $"{AppDomain.CurrentDomain.BaseDirectory}\\Civilian.json";
+            var json = String.Empty;
+            var civilianList = new List<Civilian>();
+
+            if (File.Exists(pathFile))
+            {
+                json = File.ReadAllText(pathFile, Encoding.UTF8);
+                civilianList = JsonConvert.DeserializeObject<List<Civilian>>(json);
+
+            }
+            var objeto = civilianList.FirstOrDefault(x => x.ID.ToString() == tbx_ID.Text);
+            civilianList[civilianList.IndexOf(objeto)].Nombre = tbx_Nombre.Text;
+            civilianList[civilianList.IndexOf(objeto)].Apellido = tbx_Apellido.Text;
+            civilianList[civilianList.IndexOf(objeto)].Cedula = tbx_Cedula.Text;
+            civilianList[civilianList.IndexOf(objeto)].Sangre = cb_TipoSangre.Text;
+            civilianList[civilianList.IndexOf(objeto)].LugarNacimiento = tbx_LugarNacimiento.Text;
+            civilianList[civilianList.IndexOf(objeto)].EstadoCivil = cb_EstadoCivil.Text;
+            civilianList[civilianList.IndexOf(objeto)].Nacionalidad = tbx_Nacionalidad.Text;
+            civilianList[civilianList.IndexOf(objeto)].Nacimiento = dtp_FechaNacimiento.Value;
+            civilianList[civilianList.IndexOf(objeto)].Expiracion = dtp_FechaExp.Value;
+            civilianList[civilianList.IndexOf(objeto)].Telefono = tbx_Telefono.Text;
+            civilianList[civilianList.IndexOf(objeto)].Sexo = cb_Sexo.Text;
+
+            json = JsonConvert.SerializeObject(civilianList);
+            var sw = new StreamWriter(pathFile, false, Encoding.UTF8);
+            sw.Write(json);
+            sw.Close();
+            GetRecords();
+
+            MessageBox.Show("Usuario Actualizado", "INTEC", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+            gb_Cedula.Enabled = false;
+            btn_Crear.Enabled = true;
+            btn_Guardar.Enabled = false;
+            btn_Cancelar.Enabled = true;
+            btn_Actualizar.Enabled = true;
+            btn_Borrar.Enabled = true;
+        }
+
+        private void btn_Borrar_Click(object sender, EventArgs e)
+        {
+            DeleteRecords();
+            EmptyControls();
+            GetRecords();
+        }
+
+        private void DeleteRecords()
+        {
+                var pathFile = $"{AppDomain.CurrentDomain.BaseDirectory}\\Civilian.json";
+                var json = String.Empty;
+                var civilianList = new List<Civilian>();
+
+                if (File.Exists(pathFile))
+                {
+                    json = File.ReadAllText(pathFile, Encoding.UTF8);
+                    civilianList = JsonConvert.DeserializeObject<List<Civilian>>(json);
+
+                }
+                var objeto = civilianList.FirstOrDefault(x => x.ID.ToString() == tbx_ID.Text);
+                civilianList.Remove(objeto);
+                json = JsonConvert.SerializeObject(civilianList);
+                var sw = new StreamWriter(pathFile, false, Encoding.UTF8);
+                sw.Write(json);
+                sw.Close();
+                GetRecords();
+
+            MessageBox.Show("Usuario Eliminado", "INTEC", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+            gb_Cedula.Enabled = false;
+            btn_Crear.Enabled = true;
+            btn_Guardar.Enabled = false;
+            btn_Cancelar.Enabled = true;
+            btn_Actualizar.Enabled = true;
+            btn_Borrar.Enabled = true;
+        }
+    }
     }
     
-}
