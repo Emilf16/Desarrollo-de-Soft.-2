@@ -76,3 +76,17 @@ C:\Users\user\OneDrive\Documentos\Desarrollo-de-Soft.-2\Proyecto 03 (Cedula con 
 C:\Users\user\OneDrive\Documentos\Desarrollo-de-Soft.-2\Proyecto 03 (Cedula con Json)\obj\Debug\Consultorio.csproj.CopyComplete
 C:\Users\user\OneDrive\Documentos\Desarrollo-de-Soft.-2\Proyecto 03 (Cedula con Json)\obj\Debug\Consultorio.exe
 C:\Users\user\OneDrive\Documentos\Desarrollo-de-Soft.-2\Proyecto 03 (Cedula con Json)\obj\Debug\Consultorio.pdb
+C:\Users\yopro\OneDrive\Documentos\Desarrollo-de-Soft.-2\Proyecto 03 (Cedula con Json)\bin\Debug\Consultorio.exe.config
+C:\Users\yopro\OneDrive\Documentos\Desarrollo-de-Soft.-2\Proyecto 03 (Cedula con Json)\bin\Debug\Consultorio.exe
+C:\Users\yopro\OneDrive\Documentos\Desarrollo-de-Soft.-2\Proyecto 03 (Cedula con Json)\bin\Debug\Consultorio.pdb
+C:\Users\yopro\OneDrive\Documentos\Desarrollo-de-Soft.-2\Proyecto 03 (Cedula con Json)\bin\Debug\Newtonsoft.Json.dll
+C:\Users\yopro\OneDrive\Documentos\Desarrollo-de-Soft.-2\Proyecto 03 (Cedula con Json)\bin\Debug\Newtonsoft.Json.xml
+C:\Users\yopro\OneDrive\Documentos\Desarrollo-de-Soft.-2\Proyecto 03 (Cedula con Json)\obj\Debug\Consultorio.csproj.AssemblyReference.cache
+C:\Users\yopro\OneDrive\Documentos\Desarrollo-de-Soft.-2\Proyecto 03 (Cedula con Json)\obj\Debug\Consultorio.csproj.SuggestedBindingRedirects.cache
+C:\Users\yopro\OneDrive\Documentos\Desarrollo-de-Soft.-2\Proyecto 03 (Cedula con Json)\obj\Debug\Consultorio.Form1.resources
+C:\Users\yopro\OneDrive\Documentos\Desarrollo-de-Soft.-2\Proyecto 03 (Cedula con Json)\obj\Debug\Consultorio.Properties.Resources.resources
+C:\Users\yopro\OneDrive\Documentos\Desarrollo-de-Soft.-2\Proyecto 03 (Cedula con Json)\obj\Debug\Consultorio.csproj.GenerateResource.cache
+C:\Users\yopro\OneDrive\Documentos\Desarrollo-de-Soft.-2\Proyecto 03 (Cedula con Json)\obj\Debug\Consultorio.csproj.CoreCompileInputs.cache
+C:\Users\yopro\OneDrive\Documentos\Desarrollo-de-Soft.-2\Proyecto 03 (Cedula con Json)\obj\Debug\Consultorio.csproj.CopyComplete
+C:\Users\yopro\OneDrive\Documentos\Desarrollo-de-Soft.-2\Proyecto 03 (Cedula con Json)\obj\Debug\Consultorio.exe
+C:\Users\yopro\OneDrive\Documentos\Desarrollo-de-Soft.-2\Proyecto 03 (Cedula con Json)\obj\Debug\Consultorio.pdb

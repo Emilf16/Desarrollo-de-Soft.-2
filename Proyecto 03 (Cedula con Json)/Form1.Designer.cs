@@ -62,6 +62,8 @@
             this.lbl_ID = new System.Windows.Forms.Label();
             this.btn_Actualizar = new System.Windows.Forms.Button();
             this.btn_Borrar = new System.Windows.Forms.Button();
+            this.btn_Modificar = new System.Windows.Forms.Button();
+            this.btn_Cerrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Civiles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.toolStripContainer1.SuspendLayout();
@@ -73,9 +75,10 @@
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
             this.lblTitulo.Font = new System.Drawing.Font("Modern No. 20", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(106, 31);
+            this.lblTitulo.Location = new System.Drawing.Point(71, 20);
+            this.lblTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(863, 53);
+            this.lblTitulo.Size = new System.Drawing.Size(582, 36);
             this.lblTitulo.TabIndex = 3;
             this.lblTitulo.Text = "Instituto Tecnologico de Santo Domingo";
             // 
@@ -84,12 +87,13 @@
             this.dgv_Civiles.AllowUserToAddRows = false;
             this.dgv_Civiles.AllowUserToDeleteRows = false;
             this.dgv_Civiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Civiles.Location = new System.Drawing.Point(824, 137);
+            this.dgv_Civiles.Location = new System.Drawing.Point(549, 89);
+            this.dgv_Civiles.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_Civiles.Name = "dgv_Civiles";
             this.dgv_Civiles.ReadOnly = true;
             this.dgv_Civiles.RowHeadersWidth = 62;
             this.dgv_Civiles.RowTemplate.Height = 28;
-            this.dgv_Civiles.Size = new System.Drawing.Size(803, 482);
+            this.dgv_Civiles.Size = new System.Drawing.Size(535, 313);
             this.dgv_Civiles.TabIndex = 5;
             this.dgv_Civiles.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Civiles_CellContentClick);
             this.dgv_Civiles.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Civiles_CellDoubleClick);
@@ -98,9 +102,10 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::Consultorio.Properties.Resources.profile;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(8, 8);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(88, 88);
+            this.pictureBox1.Size = new System.Drawing.Size(59, 57);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -108,9 +113,10 @@
             // btn_Crear
             // 
             this.btn_Crear.BackColor = System.Drawing.Color.Honeydew;
-            this.btn_Crear.Location = new System.Drawing.Point(20, 625);
+            this.btn_Crear.Location = new System.Drawing.Point(13, 406);
+            this.btn_Crear.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Crear.Name = "btn_Crear";
-            this.btn_Crear.Size = new System.Drawing.Size(153, 40);
+            this.btn_Crear.Size = new System.Drawing.Size(102, 26);
             this.btn_Crear.TabIndex = 6;
             this.btn_Crear.Text = "Crear";
             this.btn_Crear.UseVisualStyleBackColor = false;
@@ -120,9 +126,10 @@
             // 
             this.btn_Guardar.BackColor = System.Drawing.Color.Lime;
             this.btn_Guardar.Enabled = false;
-            this.btn_Guardar.Location = new System.Drawing.Point(179, 626);
+            this.btn_Guardar.Location = new System.Drawing.Point(552, 406);
+            this.btn_Guardar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Guardar.Name = "btn_Guardar";
-            this.btn_Guardar.Size = new System.Drawing.Size(152, 40);
+            this.btn_Guardar.Size = new System.Drawing.Size(101, 26);
             this.btn_Guardar.TabIndex = 7;
             this.btn_Guardar.Text = "Guardar";
             this.btn_Guardar.UseVisualStyleBackColor = false;
@@ -132,9 +139,10 @@
             // 
             this.btn_Cancelar.BackColor = System.Drawing.Color.Red;
             this.btn_Cancelar.Enabled = false;
-            this.btn_Cancelar.Location = new System.Drawing.Point(660, 625);
+            this.btn_Cancelar.Location = new System.Drawing.Point(885, 406);
+            this.btn_Cancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Cancelar.Name = "btn_Cancelar";
-            this.btn_Cancelar.Size = new System.Drawing.Size(152, 40);
+            this.btn_Cancelar.Size = new System.Drawing.Size(101, 26);
             this.btn_Cancelar.TabIndex = 8;
             this.btn_Cancelar.Text = "Cancelar";
             this.btn_Cancelar.UseVisualStyleBackColor = false;
@@ -145,104 +153,117 @@
             // 
             // toolStripContainer1.ContentPanel
             // 
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(150, 150);
-            this.toolStripContainer1.Location = new System.Drawing.Point(0, 718);
+            this.toolStripContainer1.ContentPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(100, 89);
+            this.toolStripContainer1.Location = new System.Drawing.Point(0, 467);
+            this.toolStripContainer1.Margin = new System.Windows.Forms.Padding(2);
             this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(150, 175);
+            this.toolStripContainer1.Size = new System.Drawing.Size(100, 114);
             this.toolStripContainer1.TabIndex = 9;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
             // tbx_Cedula
             // 
-            this.tbx_Cedula.Location = new System.Drawing.Point(6, 143);
+            this.tbx_Cedula.Location = new System.Drawing.Point(4, 93);
+            this.tbx_Cedula.Margin = new System.Windows.Forms.Padding(2);
             this.tbx_Cedula.Name = "tbx_Cedula";
-            this.tbx_Cedula.Size = new System.Drawing.Size(271, 26);
+            this.tbx_Cedula.Size = new System.Drawing.Size(182, 20);
             this.tbx_Cedula.TabIndex = 0;
             this.tbx_Cedula.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // lbl_Cedula
             // 
             this.lbl_Cedula.AutoSize = true;
-            this.lbl_Cedula.Location = new System.Drawing.Point(6, 120);
+            this.lbl_Cedula.Location = new System.Drawing.Point(4, 78);
+            this.lbl_Cedula.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Cedula.Name = "lbl_Cedula";
-            this.lbl_Cedula.Size = new System.Drawing.Size(63, 20);
+            this.lbl_Cedula.Size = new System.Drawing.Size(43, 13);
             this.lbl_Cedula.TabIndex = 1;
             this.lbl_Cedula.Text = "Cedula:";
             this.lbl_Cedula.Click += new System.EventHandler(this.label1_Click);
             // 
             // tbx_Nombre
             // 
-            this.tbx_Nombre.Location = new System.Drawing.Point(6, 68);
+            this.tbx_Nombre.Location = new System.Drawing.Point(4, 44);
+            this.tbx_Nombre.Margin = new System.Windows.Forms.Padding(2);
             this.tbx_Nombre.Name = "tbx_Nombre";
-            this.tbx_Nombre.Size = new System.Drawing.Size(271, 26);
+            this.tbx_Nombre.Size = new System.Drawing.Size(182, 20);
             this.tbx_Nombre.TabIndex = 2;
             // 
             // lbl_Nombre
             // 
             this.lbl_Nombre.AutoSize = true;
-            this.lbl_Nombre.Location = new System.Drawing.Point(6, 45);
+            this.lbl_Nombre.Location = new System.Drawing.Point(4, 29);
+            this.lbl_Nombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Nombre.Name = "lbl_Nombre";
-            this.lbl_Nombre.Size = new System.Drawing.Size(69, 20);
+            this.lbl_Nombre.Size = new System.Drawing.Size(47, 13);
             this.lbl_Nombre.TabIndex = 3;
             this.lbl_Nombre.Text = "Nombre:";
             // 
             // lbl_Apellido
             // 
             this.lbl_Apellido.AutoSize = true;
-            this.lbl_Apellido.Location = new System.Drawing.Point(298, 45);
+            this.lbl_Apellido.Location = new System.Drawing.Point(199, 29);
+            this.lbl_Apellido.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Apellido.Name = "lbl_Apellido";
-            this.lbl_Apellido.Size = new System.Drawing.Size(69, 20);
+            this.lbl_Apellido.Size = new System.Drawing.Size(47, 13);
             this.lbl_Apellido.TabIndex = 4;
             this.lbl_Apellido.Text = "Apellido:";
             this.lbl_Apellido.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // tbx_Apellido
             // 
-            this.tbx_Apellido.Location = new System.Drawing.Point(303, 68);
+            this.tbx_Apellido.Location = new System.Drawing.Point(202, 44);
+            this.tbx_Apellido.Margin = new System.Windows.Forms.Padding(2);
             this.tbx_Apellido.Name = "tbx_Apellido";
-            this.tbx_Apellido.Size = new System.Drawing.Size(271, 26);
+            this.tbx_Apellido.Size = new System.Drawing.Size(182, 20);
             this.tbx_Apellido.TabIndex = 5;
             // 
             // dtp_FechaNacimiento
             // 
-            this.dtp_FechaNacimiento.Location = new System.Drawing.Point(303, 143);
+            this.dtp_FechaNacimiento.Location = new System.Drawing.Point(202, 93);
+            this.dtp_FechaNacimiento.Margin = new System.Windows.Forms.Padding(2);
             this.dtp_FechaNacimiento.Name = "dtp_FechaNacimiento";
-            this.dtp_FechaNacimiento.Size = new System.Drawing.Size(306, 26);
+            this.dtp_FechaNacimiento.Size = new System.Drawing.Size(205, 20);
             this.dtp_FechaNacimiento.TabIndex = 6;
             this.dtp_FechaNacimiento.ValueChanged += new System.EventHandler(this.dtp_FechaNacimiento_ValueChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(298, 120);
+            this.label2.Location = new System.Drawing.Point(199, 78);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(163, 20);
+            this.label2.Size = new System.Drawing.Size(111, 13);
             this.label2.TabIndex = 7;
             this.label2.Text = "Fecha de Nacimiento:";
             // 
             // lbl_Sexo
             // 
             this.lbl_Sexo.AutoSize = true;
-            this.lbl_Sexo.Location = new System.Drawing.Point(298, 198);
+            this.lbl_Sexo.Location = new System.Drawing.Point(199, 129);
+            this.lbl_Sexo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Sexo.Name = "lbl_Sexo";
-            this.lbl_Sexo.Size = new System.Drawing.Size(49, 20);
+            this.lbl_Sexo.Size = new System.Drawing.Size(34, 13);
             this.lbl_Sexo.TabIndex = 12;
             this.lbl_Sexo.Text = "Sexo:";
             // 
             // lbl_LugardeNacimiento
             // 
             this.lbl_LugardeNacimiento.AutoSize = true;
-            this.lbl_LugardeNacimiento.Location = new System.Drawing.Point(6, 198);
+            this.lbl_LugardeNacimiento.Location = new System.Drawing.Point(4, 129);
+            this.lbl_LugardeNacimiento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_LugardeNacimiento.Name = "lbl_LugardeNacimiento";
-            this.lbl_LugardeNacimiento.Size = new System.Drawing.Size(159, 20);
+            this.lbl_LugardeNacimiento.Size = new System.Drawing.Size(108, 13);
             this.lbl_LugardeNacimiento.TabIndex = 13;
             this.lbl_LugardeNacimiento.Text = "Lugar de Nacimiento:";
             // 
             // tbx_LugarNacimiento
             // 
-            this.tbx_LugarNacimiento.Location = new System.Drawing.Point(6, 222);
+            this.tbx_LugarNacimiento.Location = new System.Drawing.Point(4, 144);
+            this.tbx_LugarNacimiento.Margin = new System.Windows.Forms.Padding(2);
             this.tbx_LugarNacimiento.Name = "tbx_LugarNacimiento";
-            this.tbx_LugarNacimiento.Size = new System.Drawing.Size(271, 26);
+            this.tbx_LugarNacimiento.Size = new System.Drawing.Size(182, 20);
             this.tbx_LugarNacimiento.TabIndex = 14;
             // 
             // cb_EstadoCivil
@@ -252,34 +273,38 @@
             "Soltero",
             "Casado",
             "Fallecido"});
-            this.cb_EstadoCivil.Location = new System.Drawing.Point(6, 295);
+            this.cb_EstadoCivil.Location = new System.Drawing.Point(4, 192);
+            this.cb_EstadoCivil.Margin = new System.Windows.Forms.Padding(2);
             this.cb_EstadoCivil.Name = "cb_EstadoCivil";
-            this.cb_EstadoCivil.Size = new System.Drawing.Size(271, 28);
+            this.cb_EstadoCivil.Size = new System.Drawing.Size(182, 21);
             this.cb_EstadoCivil.TabIndex = 15;
             // 
             // lbl_EstadoCIvil
             // 
             this.lbl_EstadoCIvil.AutoSize = true;
-            this.lbl_EstadoCIvil.Location = new System.Drawing.Point(6, 272);
+            this.lbl_EstadoCIvil.Location = new System.Drawing.Point(4, 177);
+            this.lbl_EstadoCIvil.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_EstadoCIvil.Name = "lbl_EstadoCIvil";
-            this.lbl_EstadoCIvil.Size = new System.Drawing.Size(95, 20);
+            this.lbl_EstadoCIvil.Size = new System.Drawing.Size(65, 13);
             this.lbl_EstadoCIvil.TabIndex = 16;
             this.lbl_EstadoCIvil.Text = "Estado Civil:";
             this.lbl_EstadoCIvil.Click += new System.EventHandler(this.label4_Click);
             // 
             // dtp_FechaExp
             // 
-            this.dtp_FechaExp.Location = new System.Drawing.Point(303, 372);
+            this.dtp_FechaExp.Location = new System.Drawing.Point(202, 242);
+            this.dtp_FechaExp.Margin = new System.Windows.Forms.Padding(2);
             this.dtp_FechaExp.Name = "dtp_FechaExp";
-            this.dtp_FechaExp.Size = new System.Drawing.Size(306, 26);
+            this.dtp_FechaExp.Size = new System.Drawing.Size(205, 20);
             this.dtp_FechaExp.TabIndex = 17;
             // 
             // lbl_FechaExp
             // 
             this.lbl_FechaExp.AutoSize = true;
-            this.lbl_FechaExp.Location = new System.Drawing.Point(304, 348);
+            this.lbl_FechaExp.Location = new System.Drawing.Point(203, 226);
+            this.lbl_FechaExp.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_FechaExp.Name = "lbl_FechaExp";
-            this.lbl_FechaExp.Size = new System.Drawing.Size(157, 20);
+            this.lbl_FechaExp.Size = new System.Drawing.Size(107, 13);
             this.lbl_FechaExp.TabIndex = 18;
             this.lbl_FechaExp.Text = "Fecha de Expiracion:";
             // 
@@ -295,50 +320,56 @@
             "B-",
             "AB+",
             "AB-"});
-            this.cb_TipoSangre.Location = new System.Drawing.Point(6, 371);
+            this.cb_TipoSangre.Location = new System.Drawing.Point(4, 241);
+            this.cb_TipoSangre.Margin = new System.Windows.Forms.Padding(2);
             this.cb_TipoSangre.Name = "cb_TipoSangre";
-            this.cb_TipoSangre.Size = new System.Drawing.Size(271, 28);
+            this.cb_TipoSangre.Size = new System.Drawing.Size(182, 21);
             this.cb_TipoSangre.TabIndex = 19;
             // 
             // lbl_
             // 
             this.lbl_.AutoSize = true;
-            this.lbl_.Location = new System.Drawing.Point(6, 348);
+            this.lbl_.Location = new System.Drawing.Point(4, 226);
+            this.lbl_.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_.Name = "lbl_";
-            this.lbl_.Size = new System.Drawing.Size(121, 20);
+            this.lbl_.Size = new System.Drawing.Size(83, 13);
             this.lbl_.TabIndex = 20;
             this.lbl_.Text = "Tipo de Sangre:";
             // 
             // tbx_Nacionalidad
             // 
-            this.tbx_Nacionalidad.Location = new System.Drawing.Point(309, 295);
+            this.tbx_Nacionalidad.Location = new System.Drawing.Point(206, 192);
+            this.tbx_Nacionalidad.Margin = new System.Windows.Forms.Padding(2);
             this.tbx_Nacionalidad.Name = "tbx_Nacionalidad";
-            this.tbx_Nacionalidad.Size = new System.Drawing.Size(271, 26);
+            this.tbx_Nacionalidad.Size = new System.Drawing.Size(182, 20);
             this.tbx_Nacionalidad.TabIndex = 21;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(304, 272);
+            this.label1.Location = new System.Drawing.Point(203, 177);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 20);
+            this.label1.Size = new System.Drawing.Size(72, 13);
             this.label1.TabIndex = 22;
             this.label1.Text = "Nacionalidad:";
             // 
             // tbx_Telefono
             // 
-            this.tbx_Telefono.Location = new System.Drawing.Point(6, 440);
+            this.tbx_Telefono.Location = new System.Drawing.Point(4, 286);
+            this.tbx_Telefono.Margin = new System.Windows.Forms.Padding(2);
             this.tbx_Telefono.Name = "tbx_Telefono";
-            this.tbx_Telefono.Size = new System.Drawing.Size(271, 26);
+            this.tbx_Telefono.Size = new System.Drawing.Size(182, 20);
             this.tbx_Telefono.TabIndex = 23;
             this.tbx_Telefono.TextChanged += new System.EventHandler(this.tbx_Telefono_TextChanged);
             // 
             // lbl_Telefono
             // 
             this.lbl_Telefono.AutoSize = true;
-            this.lbl_Telefono.Location = new System.Drawing.Point(6, 417);
+            this.lbl_Telefono.Location = new System.Drawing.Point(4, 271);
+            this.lbl_Telefono.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Telefono.Name = "lbl_Telefono";
-            this.lbl_Telefono.Size = new System.Drawing.Size(75, 20);
+            this.lbl_Telefono.Size = new System.Drawing.Size(52, 13);
             this.lbl_Telefono.TabIndex = 24;
             this.lbl_Telefono.Text = "Telefono:";
             // 
@@ -370,9 +401,11 @@
             this.gb_Cedula.Controls.Add(this.lbl_Cedula);
             this.gb_Cedula.Controls.Add(this.tbx_Cedula);
             this.gb_Cedula.Enabled = false;
-            this.gb_Cedula.Location = new System.Drawing.Point(20, 137);
+            this.gb_Cedula.Location = new System.Drawing.Point(13, 89);
+            this.gb_Cedula.Margin = new System.Windows.Forms.Padding(2);
             this.gb_Cedula.Name = "gb_Cedula";
-            this.gb_Cedula.Size = new System.Drawing.Size(792, 482);
+            this.gb_Cedula.Padding = new System.Windows.Forms.Padding(2);
+            this.gb_Cedula.Size = new System.Drawing.Size(528, 313);
             this.gb_Cedula.TabIndex = 4;
             this.gb_Cedula.TabStop = false;
             this.gb_Cedula.Text = "Formulario de Cedula";
@@ -385,37 +418,38 @@
             "Masculino",
             "Femenino",
             "No Binario"});
-            this.cb_Sexo.Location = new System.Drawing.Point(303, 223);
-            this.cb_Sexo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cb_Sexo.Location = new System.Drawing.Point(202, 145);
             this.cb_Sexo.Name = "cb_Sexo";
-            this.cb_Sexo.Size = new System.Drawing.Size(184, 28);
+            this.cb_Sexo.Size = new System.Drawing.Size(124, 21);
             this.cb_Sexo.TabIndex = 27;
             this.cb_Sexo.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // tbx_ID
             // 
-            this.tbx_ID.Location = new System.Drawing.Point(640, 45);
+            this.tbx_ID.Location = new System.Drawing.Point(427, 29);
+            this.tbx_ID.Margin = new System.Windows.Forms.Padding(2);
             this.tbx_ID.Name = "tbx_ID";
             this.tbx_ID.ReadOnly = true;
-            this.tbx_ID.Size = new System.Drawing.Size(54, 26);
+            this.tbx_ID.Size = new System.Drawing.Size(37, 20);
             this.tbx_ID.TabIndex = 26;
             // 
             // lbl_ID
             // 
             this.lbl_ID.AutoSize = true;
-            this.lbl_ID.Location = new System.Drawing.Point(658, 22);
+            this.lbl_ID.Location = new System.Drawing.Point(439, 14);
+            this.lbl_ID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_ID.Name = "lbl_ID";
-            this.lbl_ID.Size = new System.Drawing.Size(30, 20);
+            this.lbl_ID.Size = new System.Drawing.Size(21, 13);
             this.lbl_ID.TabIndex = 25;
             this.lbl_ID.Text = "ID:";
             // 
             // btn_Actualizar
             // 
             this.btn_Actualizar.BackColor = System.Drawing.Color.Aqua;
-            this.btn_Actualizar.Location = new System.Drawing.Point(338, 626);
-            this.btn_Actualizar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_Actualizar.Enabled = false;
+            this.btn_Actualizar.Location = new System.Drawing.Point(658, 406);
             this.btn_Actualizar.Name = "btn_Actualizar";
-            this.btn_Actualizar.Size = new System.Drawing.Size(152, 40);
+            this.btn_Actualizar.Size = new System.Drawing.Size(101, 26);
             this.btn_Actualizar.TabIndex = 10;
             this.btn_Actualizar.Text = "Actualizar";
             this.btn_Actualizar.UseVisualStyleBackColor = false;
@@ -424,21 +458,47 @@
             // btn_Borrar
             // 
             this.btn_Borrar.BackColor = System.Drawing.Color.DarkOrange;
-            this.btn_Borrar.Location = new System.Drawing.Point(498, 626);
-            this.btn_Borrar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_Borrar.Enabled = false;
+            this.btn_Borrar.Location = new System.Drawing.Point(779, 406);
             this.btn_Borrar.Name = "btn_Borrar";
-            this.btn_Borrar.Size = new System.Drawing.Size(152, 40);
+            this.btn_Borrar.Size = new System.Drawing.Size(101, 26);
             this.btn_Borrar.TabIndex = 11;
             this.btn_Borrar.Text = "Borrar";
             this.btn_Borrar.UseVisualStyleBackColor = false;
             this.btn_Borrar.Click += new System.EventHandler(this.btn_Borrar_Click);
             // 
+            // btn_Modificar
+            // 
+            this.btn_Modificar.BackColor = System.Drawing.Color.Honeydew;
+            this.btn_Modificar.Location = new System.Drawing.Point(128, 406);
+            this.btn_Modificar.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Modificar.Name = "btn_Modificar";
+            this.btn_Modificar.Size = new System.Drawing.Size(102, 26);
+            this.btn_Modificar.TabIndex = 12;
+            this.btn_Modificar.Text = "Modificar";
+            this.btn_Modificar.UseVisualStyleBackColor = false;
+            this.btn_Modificar.Click += new System.EventHandler(this.btn_Modificar_Click);
+            // 
+            // btn_Cerrar
+            // 
+            this.btn_Cerrar.BackColor = System.Drawing.Color.Honeydew;
+            this.btn_Cerrar.Location = new System.Drawing.Point(439, 406);
+            this.btn_Cerrar.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Cerrar.Name = "btn_Cerrar";
+            this.btn_Cerrar.Size = new System.Drawing.Size(102, 26);
+            this.btn_Cerrar.TabIndex = 13;
+            this.btn_Cerrar.Text = "Cerrar";
+            this.btn_Cerrar.UseVisualStyleBackColor = false;
+            this.btn_Cerrar.Click += new System.EventHandler(this.btn_Cerrar_Click);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1644, 715);
+            this.ClientSize = new System.Drawing.Size(1096, 465);
+            this.Controls.Add(this.btn_Cerrar);
+            this.Controls.Add(this.btn_Modificar);
             this.Controls.Add(this.btn_Borrar);
             this.Controls.Add(this.btn_Actualizar);
             this.Controls.Add(this.toolStripContainer1);
@@ -449,7 +509,9 @@
             this.Controls.Add(this.gb_Cedula);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.pictureBox1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de Cedula";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Civiles)).EndInit();
@@ -498,6 +560,8 @@
         private System.Windows.Forms.ComboBox cb_Sexo;
         private System.Windows.Forms.Button btn_Actualizar;
         private System.Windows.Forms.Button btn_Borrar;
+        private System.Windows.Forms.Button btn_Modificar;
+        private System.Windows.Forms.Button btn_Cerrar;
     }
 }
 

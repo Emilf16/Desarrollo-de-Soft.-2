@@ -19,7 +19,7 @@ namespace Consultorio
         {
 
             InitializeComponent();
-            GetRecords();
+         
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -50,12 +50,14 @@ namespace Consultorio
         private void btn_Cancelar_Click(object sender, EventArgs e)
         {
             EmptyControls();
+            GetRecords();
             btn_Crear.Enabled = true;
             btn_Guardar.Enabled = false;
-            btn_Cancelar.Enabled = true;
+            btn_Cancelar.Enabled = false;
             btn_Actualizar.Enabled = false;
             btn_Borrar.Enabled = false;
             gb_Cedula.Enabled = false;
+            btn_Modificar.Enabled = true;
         }
 
         private void btn_Crear_Click(object sender, EventArgs e)
@@ -66,6 +68,7 @@ namespace Consultorio
             btn_Actualizar.Enabled = false;
             btn_Borrar.Enabled = false;
             gb_Cedula.Enabled = true;
+            btn_Modificar.Enabled = false;
 
             GenerateNewID();
             GetRecords();
@@ -153,7 +156,7 @@ namespace Consultorio
             btn_Cancelar.Enabled = true;
             btn_Actualizar.Enabled = false;
             btn_Borrar.Enabled = false;
-
+            btn_Cancelar.Enabled = false;
             
             
 
@@ -255,6 +258,7 @@ namespace Consultorio
         {
             UpdateRecords();
             EmptyControls();
+
         }
 
         private void UpdateRecords()
@@ -335,6 +339,23 @@ namespace Consultorio
             btn_Cancelar.Enabled = true;
             btn_Actualizar.Enabled = true;
             btn_Borrar.Enabled = true;
+        }
+
+        private void btn_Cerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn_Modificar_Click(object sender, EventArgs e)
+        {
+            GetRecords();
+            gb_Cedula.Enabled = false;
+            btn_Crear.Enabled = false;
+            btn_Guardar.Enabled = false;
+            btn_Cancelar.Enabled = true;
+            btn_Actualizar.Enabled = true;
+            btn_Borrar.Enabled = true;
+            btn_Modificar.Enabled = false;
         }
     }
     }
