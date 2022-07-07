@@ -112,7 +112,9 @@ namespace Consultorio
                     Nacimiento = dtp_FechaNacimiento.Value,
                     Expiracion = dtp_FechaExp.Value,
                     Telefono = tbx_Telefono.Text,
-                };
+                    Foto = pbx_Foto.ImageLocation,
+
+            };
             }
             else
             {
@@ -135,6 +137,7 @@ namespace Consultorio
                     civilian.Nacimiento = dtp_FechaNacimiento.Value;
                     civilian.Expiracion = dtp_FechaExp.Value;
                     civilian.Telefono = tbx_Telefono.Text;
+                    civilian.Foto = pbx_Foto.ImageLocation;
                 }
 
             }
@@ -186,6 +189,10 @@ namespace Consultorio
         }
         private void EmptyControls()
         {
+            pbx_Foto.Image = null;
+            dtp_FechaExp.Value = DateTime.Today;
+            dtp_FechaNacimiento.Value = DateTime.Today;
+
             foreach (Control c in gb_Cedula.Controls)
             {
                 if (c is TextBox) 
@@ -239,6 +246,7 @@ namespace Consultorio
                 dtp_FechaExp.Text = objeto.Expiracion.ToString();
                 tbx_Telefono.Text = objeto.Telefono.ToString();
                 cb_Sexo.Text = objeto.Sexo.ToString();
+                pbx_Foto.ImageLocation = objeto.Foto.ToString();
             }
 
 
@@ -285,6 +293,7 @@ namespace Consultorio
             civilianList[civilianList.IndexOf(objeto)].Expiracion = dtp_FechaExp.Value;
             civilianList[civilianList.IndexOf(objeto)].Telefono = tbx_Telefono.Text;
             civilianList[civilianList.IndexOf(objeto)].Sexo = cb_Sexo.Text;
+            civilianList[civilianList.IndexOf(objeto)].Foto = pbx_Foto.ImageLocation;
 
             json = JsonConvert.SerializeObject(civilianList);
             var sw = new StreamWriter(pathFile, false, Encoding.UTF8);
@@ -356,6 +365,16 @@ namespace Consultorio
             btn_Actualizar.Enabled = true;
             btn_Borrar.Enabled = true;
             btn_Modificar.Enabled = false;
+        }
+
+        private void btn_SubirFoto_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image File(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                pbx_Foto.ImageLocation = openFileDialog.FileName;
+            }
         }
     }
     }

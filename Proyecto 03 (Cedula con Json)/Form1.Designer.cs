@@ -64,10 +64,13 @@
             this.btn_Borrar = new System.Windows.Forms.Button();
             this.btn_Modificar = new System.Windows.Forms.Button();
             this.btn_Cerrar = new System.Windows.Forms.Button();
+            this.pbx_Foto = new System.Windows.Forms.PictureBox();
+            this.btn_SubirFoto = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Civiles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.toolStripContainer1.SuspendLayout();
             this.gb_Cedula.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_Foto)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -87,13 +90,13 @@
             this.dgv_Civiles.AllowUserToAddRows = false;
             this.dgv_Civiles.AllowUserToDeleteRows = false;
             this.dgv_Civiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Civiles.Location = new System.Drawing.Point(549, 89);
+            this.dgv_Civiles.Location = new System.Drawing.Point(641, 89);
             this.dgv_Civiles.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_Civiles.Name = "dgv_Civiles";
             this.dgv_Civiles.ReadOnly = true;
             this.dgv_Civiles.RowHeadersWidth = 62;
             this.dgv_Civiles.RowTemplate.Height = 28;
-            this.dgv_Civiles.Size = new System.Drawing.Size(535, 313);
+            this.dgv_Civiles.Size = new System.Drawing.Size(443, 313);
             this.dgv_Civiles.TabIndex = 5;
             this.dgv_Civiles.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Civiles_CellContentClick);
             this.dgv_Civiles.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Civiles_CellDoubleClick);
@@ -126,7 +129,7 @@
             // 
             this.btn_Guardar.BackColor = System.Drawing.Color.Lime;
             this.btn_Guardar.Enabled = false;
-            this.btn_Guardar.Location = new System.Drawing.Point(552, 406);
+            this.btn_Guardar.Location = new System.Drawing.Point(641, 406);
             this.btn_Guardar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Guardar.Name = "btn_Guardar";
             this.btn_Guardar.Size = new System.Drawing.Size(101, 26);
@@ -139,7 +142,7 @@
             // 
             this.btn_Cancelar.BackColor = System.Drawing.Color.Red;
             this.btn_Cancelar.Enabled = false;
-            this.btn_Cancelar.Location = new System.Drawing.Point(885, 406);
+            this.btn_Cancelar.Location = new System.Drawing.Point(974, 406);
             this.btn_Cancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Cancelar.Name = "btn_Cancelar";
             this.btn_Cancelar.Size = new System.Drawing.Size(101, 26);
@@ -376,6 +379,8 @@
             // gb_Cedula
             // 
             this.gb_Cedula.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.gb_Cedula.Controls.Add(this.btn_SubirFoto);
+            this.gb_Cedula.Controls.Add(this.pbx_Foto);
             this.gb_Cedula.Controls.Add(this.cb_Sexo);
             this.gb_Cedula.Controls.Add(this.tbx_ID);
             this.gb_Cedula.Controls.Add(this.lbl_ID);
@@ -405,7 +410,7 @@
             this.gb_Cedula.Margin = new System.Windows.Forms.Padding(2);
             this.gb_Cedula.Name = "gb_Cedula";
             this.gb_Cedula.Padding = new System.Windows.Forms.Padding(2);
-            this.gb_Cedula.Size = new System.Drawing.Size(528, 313);
+            this.gb_Cedula.Size = new System.Drawing.Size(624, 313);
             this.gb_Cedula.TabIndex = 4;
             this.gb_Cedula.TabStop = false;
             this.gb_Cedula.Text = "Formulario de Cedula";
@@ -426,7 +431,7 @@
             // 
             // tbx_ID
             // 
-            this.tbx_ID.Location = new System.Drawing.Point(427, 29);
+            this.tbx_ID.Location = new System.Drawing.Point(583, 29);
             this.tbx_ID.Margin = new System.Windows.Forms.Padding(2);
             this.tbx_ID.Name = "tbx_ID";
             this.tbx_ID.ReadOnly = true;
@@ -436,7 +441,7 @@
             // lbl_ID
             // 
             this.lbl_ID.AutoSize = true;
-            this.lbl_ID.Location = new System.Drawing.Point(439, 14);
+            this.lbl_ID.Location = new System.Drawing.Point(599, 14);
             this.lbl_ID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_ID.Name = "lbl_ID";
             this.lbl_ID.Size = new System.Drawing.Size(21, 13);
@@ -447,7 +452,7 @@
             // 
             this.btn_Actualizar.BackColor = System.Drawing.Color.Aqua;
             this.btn_Actualizar.Enabled = false;
-            this.btn_Actualizar.Location = new System.Drawing.Point(658, 406);
+            this.btn_Actualizar.Location = new System.Drawing.Point(747, 406);
             this.btn_Actualizar.Name = "btn_Actualizar";
             this.btn_Actualizar.Size = new System.Drawing.Size(101, 26);
             this.btn_Actualizar.TabIndex = 10;
@@ -459,7 +464,7 @@
             // 
             this.btn_Borrar.BackColor = System.Drawing.Color.DarkOrange;
             this.btn_Borrar.Enabled = false;
-            this.btn_Borrar.Location = new System.Drawing.Point(779, 406);
+            this.btn_Borrar.Location = new System.Drawing.Point(868, 406);
             this.btn_Borrar.Name = "btn_Borrar";
             this.btn_Borrar.Size = new System.Drawing.Size(101, 26);
             this.btn_Borrar.TabIndex = 11;
@@ -491,6 +496,25 @@
             this.btn_Cerrar.UseVisualStyleBackColor = false;
             this.btn_Cerrar.Click += new System.EventHandler(this.btn_Cerrar_Click);
             // 
+            // pbx_Foto
+            // 
+            this.pbx_Foto.Location = new System.Drawing.Point(445, 18);
+            this.pbx_Foto.Name = "pbx_Foto";
+            this.pbx_Foto.Size = new System.Drawing.Size(133, 146);
+            this.pbx_Foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbx_Foto.TabIndex = 28;
+            this.pbx_Foto.TabStop = false;
+            // 
+            // btn_SubirFoto
+            // 
+            this.btn_SubirFoto.Location = new System.Drawing.Point(445, 172);
+            this.btn_SubirFoto.Name = "btn_SubirFoto";
+            this.btn_SubirFoto.Size = new System.Drawing.Size(133, 23);
+            this.btn_SubirFoto.TabIndex = 29;
+            this.btn_SubirFoto.Text = "Subir Foto";
+            this.btn_SubirFoto.UseVisualStyleBackColor = true;
+            this.btn_SubirFoto.Click += new System.EventHandler(this.btn_SubirFoto_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -520,6 +544,7 @@
             this.toolStripContainer1.PerformLayout();
             this.gb_Cedula.ResumeLayout(false);
             this.gb_Cedula.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_Foto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -562,6 +587,8 @@
         private System.Windows.Forms.Button btn_Borrar;
         private System.Windows.Forms.Button btn_Modificar;
         private System.Windows.Forms.Button btn_Cerrar;
+        private System.Windows.Forms.Button btn_SubirFoto;
+        private System.Windows.Forms.PictureBox pbx_Foto;
     }
 }
 
